@@ -1,0 +1,10 @@
+image:
+  repository: chakrellah1995/nodejs-api
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 3000
+
+replicaCount: 1
