@@ -15,8 +15,16 @@ spec:
           enabled: true
         adminUser: admin
         adminPassword: admin
+        podSecurityPolicy:
+          enabled: false
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
   syncPolicy:
-    automated: {}
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - ServerSideApply=true
+      - Replace=true
