@@ -9,6 +9,8 @@ spec:
     repoURL: https://github.com/chakrellah/k8s-gitops-project.git
     targetRevision: HEAD
     path: applications
+    directory:
+      recurse: true   #critical to ensure all sub-applications are included
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
