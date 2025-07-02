@@ -3,4 +3,4 @@ auth:
   database: appdb
 primary:
   service:
-    type: ClusterIP
+    type: NodePort

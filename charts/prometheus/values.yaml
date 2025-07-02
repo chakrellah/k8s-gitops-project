@@ -2,4 +2,4 @@ alertmanager:
   enabled: true
 server:
   service:
-    type: ClusterIP
+    type: NodePort
