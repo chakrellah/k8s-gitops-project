@@ -1,6 +1,6 @@
 replicaCount: 1
 image:
-  repository: chakrellah/nodejs-api
+  repository: chakrellah1995/nodejs-api
   tag: latest
   pullPolicy: IfNotPresent
 
