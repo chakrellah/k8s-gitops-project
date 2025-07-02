@@ -2,8 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nodejs-api
-  labels:
-    app: nodejs-api
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
@@ -17,6 +15,5 @@ spec:
       containers:
         - name: nodejs-api
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: 3000

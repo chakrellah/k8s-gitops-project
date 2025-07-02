@@ -1,17 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: grafana
+  name: apps
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/chakrellah/k8s-gitops-project.git
     targetRevision: HEAD
-    path: charts/grafana
+    path: applications
+    directory:
+      recurse: true
   destination:
     server: https://kubernetes.default.svc
-    namespace: app
+    namespace: argocd
   syncPolicy:
     automated:
       prune: true

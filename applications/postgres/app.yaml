@@ -6,18 +6,13 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://charts.bitnami.com/bitnami
-    chart: postgresql
-    targetRevision: 15.3.0
-    helm:
-      values: |
-        global:
-          postgresql:
-            postgresqlDatabase: nodeapi_db
-            postgresqlUsername: nodeapi
-            postgresqlPassword: "nodeapi-password"
+    repoURL: https://github.com/chakrellah/k8s-gitops-project.git
+    targetRevision: HEAD
+    path: charts/postgres
   destination:
     server: https://kubernetes.default.svc
-    namespace: database
+    namespace: app
   syncPolicy:
-    automated: {}
+    automated:
+      prune: true
+      selfHeal: true

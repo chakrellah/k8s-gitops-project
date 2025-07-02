@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/YOUR_USERNAME/k8s-gitops-project.git
+    repoURL: https://github.com/chakrellah/k8s-gitops-project.git
     targetRevision: HEAD
     path: charts/nodejs-api
   destination:

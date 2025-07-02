@@ -6,11 +6,13 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://prometheus-community.github.io/helm-charts
-    chart: kube-prometheus-stack
-    targetRevision: 59.3.0
+    repoURL: https://github.com/chakrellah/k8s-gitops-project.git
+    targetRevision: HEAD
+    path: charts/prometheus
   destination:
     server: https://kubernetes.default.svc
-    namespace: monitoring
+    namespace: app
   syncPolicy:
-    automated: {}
+    automated:
+      prune: true
+      selfHeal: true

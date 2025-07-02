@@ -1,0 +1,3 @@
+adminPassword: "admin"
+service:
+  type: ClusterIP
