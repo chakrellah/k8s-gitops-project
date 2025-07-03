@@ -9,6 +9,9 @@ spec:
     repoURL: https://github.com/chakrellah/k8s-gitops-project.git
     targetRevision: HEAD
     path: charts/prometheus
+    helm:
+      valueFiles:
+        - values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: app

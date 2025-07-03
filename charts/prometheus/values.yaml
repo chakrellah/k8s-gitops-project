@@ -1,8 +1,9 @@
-alertmanager:
-  enabled: true
-server:
-  service:
-    type: NodePort
-    port: 80
-    targetPort: 9090
-    nodePort: 32001 
+prometheus:
+  server:
+    service:
+      type: NodePort
+      port: 80
+      targetPort: 9090
+      nodePort: 32001
+  alertmanager:
+    enabled: true
