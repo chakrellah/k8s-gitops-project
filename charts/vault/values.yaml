@@ -1,5 +1,12 @@
 server:
   dev:
-    enabled: true
+    enabled: false           # disable dev mode for persistent storage
+  dataStorage:
+    enabled: true            # enable persistent volume for data
+    size: 10Gi               # adjust PVC size as needed (default 10Gi)
+    storageClass: null       # use default StorageClass (or specify one)
+    accessMode: ReadWriteOnce
+#  ha:
+#    enabled: false          # (optional) keep HA disabled for a single node for now
 ui:
-  enabled: true
+  enabled: true 
