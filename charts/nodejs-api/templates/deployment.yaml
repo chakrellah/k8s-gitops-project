@@ -13,6 +13,7 @@ spec:
         app: nodejs-api
       annotations:
         vault.hashicorp.com/agent-inject: "true"
+        vault.hashicorp.com/vault-addr: "http://vault.app.svc:8200"
         vault.hashicorp.com/role: "nodejs-api-role"
         vault.hashicorp.com/agent-inject-secret-DATABASE_URL: "kv/data/nodejs-api"
         vault.hashicorp.com/agent-inject-template-DATABASE_URL: |
