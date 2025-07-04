@@ -1,3 +1,4 @@
+{{- if .Values.enableCustomRBAC }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -14,3 +15,4 @@ data:
     p, role:admin, applications, delete, *, allow
     p, role:admin, clusters, get, *, allow
     g, admin, role:admin
+{{- end }}

@@ -1,3 +1,5 @@
+enableCustomRBAC: true
+
 controller:
   metrics:
     enabled: true
