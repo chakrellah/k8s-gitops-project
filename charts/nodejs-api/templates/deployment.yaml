@@ -11,16 +11,20 @@ spec:
     metadata:
       labels:
         app: nodejs-api
+      annotations:
+        vault.hashicorp.com/agent-inject: "true"
+        vault.hashicorp.com/role: "nodejs-api-role"
+        vault.hashicorp.com/agent-inject-secret-DATABASE_URL: "kv/data/nodejs-api"
+        vault.hashicorp.com/agent-inject-template-DATABASE_URL: |
+          {{`{{- with secret "kv/data/nodejs-api" -}}`}}
+          export DATABASE_URL="{{`{{ .Data.data.DATABASE_URL }}`}}"
+          {{`{{- end }}`}}
     spec:
+      serviceAccountName: nodejs-api
       containers:
         - name: nodejs-api
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           ports:
             - containerPort: 3000
-          env:
-            - name: DATABASE_URL
-              valueFrom:
-                secretKeyRef:
-                  name: nodejs-api-secret
-                  key: DATABASE_URL
-
+          command: ["/bin/sh"]
+          args: ["-c", "source /vault/secrets/DATABASE_URL && node index.js"]
