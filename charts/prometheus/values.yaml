@@ -7,3 +7,10 @@ prometheus:
       nodePort: 32001
   alertmanager:
     enabled: true
+
+additionalScrapeConfigs:
+  - job_name: 'argocd'
+    static_configs:
+      - targets:
+          - 'argocd-server.argocd.svc.cluster.local:8082'
+

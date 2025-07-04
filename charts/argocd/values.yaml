@@ -1,0 +1,23 @@
+controller:
+  metrics:
+    enabled: true
+
+repoServer:
+  metrics:
+    enabled: true
+
+server:
+  metrics:
+    enabled: true
+  service:
+    ports:
+      - name: http
+        port: 80
+        targetPort: 8080
+      - name: metrics
+        port: 8083
+        targetPort: 8083
+
+applicationSet:
+  metrics:
+    enabled: true

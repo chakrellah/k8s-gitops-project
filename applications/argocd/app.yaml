@@ -8,7 +8,10 @@ spec:
   source:
     repoURL: https://github.com/chakrellah/k8s-gitops-project.git
     targetRevision: HEAD
-    path: applications/argocd
+    path: chart/argocd
+    helm:
+      valueFiles:
+        - values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
@@ -16,7 +19,3 @@ spec:
     automated:
       prune: true
       selfHeal: true
-  sources:
-  - path: ../secrets/postgres-secret.yaml       
-  - path: ../postgres/app.yaml                  
-
