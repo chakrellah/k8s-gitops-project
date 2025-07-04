@@ -1,9 +1,11 @@
 replicaCount: 1
+
 image:
   repository: chakrellah1995/nodejs-api
   tag: latest
   pullPolicy: IfNotPresent
 
 service:
-  type: ClusterIP
+  type: NodePort
   port: 3000
+  nodePort: 32001
