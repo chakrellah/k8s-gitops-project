@@ -28,4 +28,4 @@ spec:
           ports:
             - containerPort: 3000
           command: ["/bin/sh"]
-          args: ["-c", "source /vault/secrets/DATABASE_URL && node index.js"]
+          args: ["-c", "sleep 3600"]
