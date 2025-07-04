@@ -15,8 +15,8 @@ server:
         port: 80
         targetPort: 8080
       - name: metrics
-        port: 8083
-        targetPort: 8083
+        port: 8082
+        targetPort: 8082
 
 applicationSet:
   metrics:
