@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/chakrellah/k8s-gitops-project.git
-    targetRevision: HEAD
+    targetRevision: feature/argocd-monitoring
     path: applications
     directory:
       recurse: true   #critical to ensure all sub-applications are included
