@@ -11,6 +11,4 @@ prometheus:
 additionalScrapeConfigs:
   - job_name: 'argocd'
     static_configs:
-      - targets:
-          - 'argocd-server.argocd.svc.cluster.local:8082'
-
+      - targets: ['argocd-server.argocd.svc.cluster.local:8083']
